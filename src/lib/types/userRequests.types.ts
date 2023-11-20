@@ -7,4 +7,5 @@ export type UserRequest = {
 	url: string;
 	body?: object;
 	headers?: object;
+	params?: Record<string, string>;
 };

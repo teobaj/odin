@@ -3,6 +3,7 @@
 	import ProjectList from '$lib/components/ProjectList.svelte';
 	import SideMenu from '$lib/components/SideMenu.svelte';
 	import '../app.postcss';
+	import 'remixicon/fonts/remixicon.css';
 </script>
 
 <div class="wrapper">

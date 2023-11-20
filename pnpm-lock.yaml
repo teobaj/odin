@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+dependencies:
+  remixicon:
+    specifier: ^3.5.0
+    version: 3.5.0
+
 devDependencies:
   '@skeletonlabs/skeleton':
     specifier: ^2.3.0
@@ -1779,6 +1784,10 @@ packages:
     dependencies:
       picomatch: 2.3.1
     dev: true
+
+  /remixicon@3.5.0:
+    resolution: {integrity: sha512-wNzWGKf4frb3tEmgvP5shry0n1OdTjjEk9RHLuRuAhfA50bvEdpKH1XWNUYrHUSjAQQkkdyIm+lf4mOuysIKTQ==}
+    dev: false
 
   /resolve-from@4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}

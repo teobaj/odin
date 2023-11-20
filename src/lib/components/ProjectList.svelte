@@ -5,7 +5,7 @@
 
 <div class="flex flex-col gap-2 p-2">
 	<label class="label">
-		<input class="input p-2" type="search" placeholder="Search..." />
+		<input class="input p-2" type="search" placeholder="search..." />
 	</label>
 	<div class="flex justify-end">
 		<button type="button" class="btn btn-sm variant-filled" on:click={projects.addNewProject}

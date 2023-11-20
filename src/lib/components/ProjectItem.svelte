@@ -39,9 +39,18 @@
 		</div>
 		<div class="flex flex-col" slot="content">
 			{#each project.requests as req}
-				<span contenteditable="true" on:input={(e) => editRequestName(project.id, req, e)}
-					>{req.name}</span
-				>
+				<div class="flex justify-between">
+					<a href={`/?project=${project.id}&request=${req.id}`}>
+						<span contenteditable="true" on:input={(e) => editRequestName(project.id, req, e)}
+							>{req.name}</span
+						>
+					</a>
+					<button
+						type="button"
+						class="btn btn-sm variant-filled"
+						on:click|stopPropagation={() => projects.deleteRequest(project.id, req.id)}>X</button
+					>
+				</div>
 			{/each}
 		</div>
 	</AccordionItem>
