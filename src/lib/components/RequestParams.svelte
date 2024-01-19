@@ -29,6 +29,13 @@
 			delete request.params[key];
 		}
 	};
+
+	const deleteParam = (key: string) => {
+		dispatch('deleteparam', {
+			key: key
+		})
+
+	}
 </script>
 
 <div class="flex flex-col p-2 gap-2">
@@ -42,7 +49,7 @@
 				<label class="label">
 					<input class="input p-2" type="text" value={val} on:input={() => updateValue(key, val)} />
 				</label>
-				<button type="button" class="btn variant-filled rounded" on:click={addNewParam}>
+				<button type="button" class="btn variant-filled rounded" on:click={() => deleteParam(key)}>
 					<i class="ri-delete-bin-line" />
 				</button>
 			</div>

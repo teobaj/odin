@@ -111,6 +111,20 @@ function createProjectStore() {
 		});
 	}
 
+	function deleteParamKey(projectId: number, requestId:number, key: string){
+		update((state) => {
+			const projectIndex = state.findIndex((project) => project.id === projectId);
+			if (projectIndex !== -1) {
+				const requestIndex = state[projectIndex].requests.findIndex((req) => req.id === requestId);
+				if(state[projectIndex].requests[requestIndex].params){
+					delete state[projectIndex].requests[requestIndex].params![key]
+				}
+			}
+			return state;
+		})
+
+	}
+
 	return {
 		subscribe,
 		set,
@@ -122,7 +136,8 @@ function createProjectStore() {
 		updateRequest,
 		deleteRequest,
 		addNewRequestParam,
-		updateParamKey
+		updateParamKey,
+		deleteParamKey
 	};
 }
 

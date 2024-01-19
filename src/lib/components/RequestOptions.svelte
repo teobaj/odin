@@ -2,6 +2,7 @@
 	import { projects } from '$lib/stores/project.store';
 	import { TabGroup, Tab } from '@skeletonlabs/skeleton';
 	import RequestParams from './RequestParams.svelte';
+	import RequestBody from './RequestBody.svelte';
 
 	let tabSet = 0;
 	export let requestId: number;
@@ -11,6 +12,11 @@
 		const newParam = e.detail;
 		projects.addNewRequestParam(projectId, requestId, newParam);
 	};
+
+	const handleDeletepPram = (e: CustomEvent) => {
+		const key = e.detail.key
+		projects.deleteParamKey(projectId, requestId, key)
+	}
 
 	$: data = $projects
 		.find((pro) => pro.id === projectId)
@@ -25,12 +31,14 @@
 	<svelte:fragment slot="panel">
 		{#if tabSet === 0}
 			{#if data}
-				<RequestParams request={data} on:newparam={handleAddNewParam} />
+				<RequestParams request={data} on:newparam={handleAddNewParam} on:deleteparam={handleDeletepPram}/>
 			{/if}
 		{:else if tabSet === 1}
-			(tab panel 2 contents)
+		(tab panel 3 contents)
+
 		{:else if tabSet === 2}
-			(tab panel 3 contents)
+			<RequestBody />
+
 		{/if}
 	</svelte:fragment>
 </TabGroup>
